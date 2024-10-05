@@ -2,12 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
 
-    searchButton.addEventListener('click', () => {
+    const performSearch = () => {
         const searchTerm = searchInput.value.trim();
         if (searchTerm) {
-            // Implement search functionality here
-            console.log(`Searching urban insights for: ${searchTerm}`);
-            // TODO: Implement actual search functionality
+            const encodedSearchTerm = encodeURIComponent(searchTerm);
+            const searchUrl = `https://planwithdata.github.io/EV-Sales-India2024/?search=${encodedSearchTerm}`;
+            window.location.href = searchUrl;
+        }
+    };
+
+    searchButton.addEventListener('click', performSearch);
+
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            performSearch();
         }
     });
 
