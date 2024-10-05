@@ -25,7 +25,7 @@ function loadBlogPosts() {
     // This function will dynamically load blog posts from your Jupyter notebook exports
     // For now, it's a placeholder
     const blogPostsSection = document.getElementById('blog-posts');
-    blogPostsSection.innerHTML = '<p>Blog posts coming soon!</p>';
+    blogPostsSection.innerHTML = '<p>More articles will be published as research goes ahead! Subscribe our Newsletter to not miss any post.</p>';
 }
 
 // Call the function to load blog posts
