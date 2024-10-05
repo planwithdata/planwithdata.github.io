@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchTerm = searchInput.value.trim();
         if (searchTerm) {
             // Implement search functionality here
-            console.log(`Searching for: ${searchTerm}`);
-            // You can replace this with actual search logic in the future
+            console.log(`Searching urban insights for: ${searchTerm}`);
+            // TODO: Implement actual search functionality
         }
     });
 
