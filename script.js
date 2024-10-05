@@ -15,7 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (text.includes('Not Found') || text.includes('no results')) {
                     alert('Not Found, Sorry!');
                 } else {
-                    window.location.href = searchUrl;
+                    // Check if the search term is actually present in the response
+                    const parser = new DOMParser();
+                    const htmlDoc = parser.parseFromString(text, 'text/html');
+                    const content = htmlDoc.body.textContent || "";
+                    
+                    if (content.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        window.location.href = searchUrl;
+                    } else {
+                        alert('Not Found, Sorry!');
+                    }
                 }
             } catch (error) {
                 console.error('Error performing search:', error);
