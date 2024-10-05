@@ -52,15 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle newsletter subscription
     const subscribeForm = document.getElementById('subscribe-form');
     if (subscribeForm) {
-        subscribeForm.addEventListener('submit', (e) => {
+        subscribeForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const emailInput = document.getElementById('email-input');
             const email = emailInput.value.trim();
             if (email) {
-                // Here you would typically send the email to your server
-                console.log(`Subscribed: ${email}`);
-                alert('Thank you for subscribing!');
-                emailInput.value = '';
+                try {
+                    const response = await fetch(subscribeForm.action, {
+                        method: 'POST',
+                        body: new FormData(subscribeForm),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        alert('Thank you for subscribing! You will receive updates on every new post.');
+                        emailInput.value = '';
+                    } else {
+                        throw new Error('Subscription failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again later.');
+                }
             }
         });
     }
