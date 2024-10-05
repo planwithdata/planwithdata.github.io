@@ -31,7 +31,7 @@ header {
 .header-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
@@ -44,8 +44,8 @@ header {
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     margin-right: 1rem;
     border-radius: 50%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -59,10 +59,11 @@ h1 {
     font-family: 'Playfair Display', serif;
     color: var(--accent-blue);
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2rem;
     opacity: 0.8;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 0;
+    line-height: 1;
 }
 
 h2 {
@@ -74,7 +75,14 @@ h2 {
 .tagline {
     color: var(--accent-purple);
     font-weight: 300;
-    margin-top: 0.2rem;
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 nav ul {
