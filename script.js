@@ -30,3 +30,30 @@ function loadBlogPosts() {
 
 // Call the function to load blog posts
 loadBlogPosts();
+
+// Newsletter subscription form handling
+const newsletterForm = document.getElementById('newsletter-form');
+newsletterForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    
+    try {
+        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        });
+
+        if (response.ok) {
+            alert('Thank you for subscribing to our newsletter!');
+            newsletterForm.reset();
+        } else {
+            throw new Error('Subscription failed. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert(error.message);
+    }
+});
