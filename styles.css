@@ -108,6 +108,22 @@ main {
     background-color: var(--accent-blue);
 }
 
+.main-site-button {
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.main-site-button:hover {
+    background-color: var(--accent-blue);
+}
+
 footer {
     background-color: rgba(10, 10, 10, 0.8);
     padding: 1rem;
