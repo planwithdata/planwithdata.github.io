@@ -98,14 +98,14 @@ nav ul {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
     color: var(--text-color);
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .social-link:hover {
@@ -287,8 +287,9 @@ footer p {
 
 @media (max-width: 600px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .search-container {
@@ -325,5 +326,11 @@ footer p {
         width: 100%;
         max-width: none;
         margin-bottom: 1rem;
+    }
+
+    .social-link {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
     }
 }
