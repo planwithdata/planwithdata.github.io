@@ -169,38 +169,6 @@ footer {
     margin-top: 2rem;
 }
 
-#newsletter-signup {
-    background-color: rgba(100, 255, 218, 0.05);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin-top: 2rem;
-    text-align: center;
-}
-
-#newsletter-signup h2 {
-    margin-bottom: 0.5rem;
-}
-
-#newsletter-signup p {
-    margin-bottom: 1rem;
-    color: var(--accent-purple);
-}
-
-#newsletter-form {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-#newsletter-email {
-    flex-grow: 1;
-    max-width: 300px;
-    padding: 0.5rem;
-    border: 1px solid var(--accent-blue);
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--text-color);
-    border-radius: 5px;
-}
 
 #upcoming-research {
     margin-top: 2rem;
@@ -272,14 +240,4 @@ footer p {
         font-size: 0.7rem;
     }
 
-    #newsletter-form {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #newsletter-email {
-        width: 100%;
-        max-width: none;
-        margin-bottom: 1rem;
-    }
 }
