@@ -31,7 +31,7 @@ header {
 .header-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
@@ -40,6 +40,7 @@ header {
 .logo-title-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 1rem;
 }
 
@@ -52,7 +53,7 @@ header {
 }
 
 .header-text {
-    text-align: left;
+    text-align: center;
 }
 
 h1 {
