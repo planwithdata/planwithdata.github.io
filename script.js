@@ -38,7 +38,7 @@ newsletterForm.addEventListener('submit', async (e) => {
     const email = document.getElementById('newsletter-email').value;
     
     try {
-        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        const response = await fetch('https://formspree.io/f/xlderbpo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
