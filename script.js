@@ -48,6 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.body.style.backgroundPosition = `${x * 20}px ${y * 20}px`;
     });
+
+    // Handle newsletter subscription
+    const subscribeForm = document.getElementById('subscribe-form');
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('email-input');
+            const email = emailInput.value.trim();
+            if (email) {
+                // Here you would typically send the email to your server
+                console.log(`Subscribed: ${email}`);
+                alert('Thank you for subscribing!');
+                emailInput.value = '';
+            }
+        });
+    }
 });
 
 
