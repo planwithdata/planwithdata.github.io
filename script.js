@@ -2,12 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
 
-    const performSearch = () => {
+    const performSearch = async () => {
         const searchTerm = searchInput.value.trim();
         if (searchTerm) {
             const encodedSearchTerm = encodeURIComponent(searchTerm);
             const searchUrl = `https://planwithdata.github.io/EV-Sales-India2024/?search=${encodedSearchTerm}`;
-            window.location.href = searchUrl;
+            
+            try {
+                const response = await fetch(searchUrl);
+                const text = await response.text();
+                
+                if (text.includes('Not Found') || text.includes('no results')) {
+                    alert('Not Found, Sorry!');
+                } else {
+                    window.location.href = searchUrl;
+                }
+            } catch (error) {
+                console.error('Error performing search:', error);
+                alert('An error occurred while searching. Please try again.');
+            }
         }
     };
 
