@@ -20,16 +20,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Function to load blog posts (to be implemented)
-function loadBlogPosts() {
-    // This function will dynamically load blog posts from your Jupyter notebook exports
-    // For now, it's a placeholder
+// Function to load blog posts
+function loadBlogPosts(page = 1) {
     const blogPostsSection = document.getElementById('blog-posts');
-    blogPostsSection.innerHTML = '<p>More articles will be published as research goes ahead! Subscribe our Newsletter to not miss any post.</p>';
+    const paginationSection = document.getElementById('pagination');
+    
+    // Simulated blog post data (replace with actual data fetching logic)
+    const posts = [
+        { title: "Urban Transit Innovations", excerpt: "Exploring cutting-edge solutions in urban transportation..." },
+        { title: "Sustainable City Planning", excerpt: "How data-driven approaches are shaping eco-friendly urban spaces..." },
+        { title: "The Future of Smart Cities", excerpt: "Predicting trends and technologies that will define our urban landscapes..." },
+        // Add more post objects as needed
+    ];
+
+    const postsPerPage = 3;
+    const startIndex = (page - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+    const paginatedPosts = posts.slice(startIndex, endIndex);
+
+    // Clear existing content
+    blogPostsSection.innerHTML = '';
+    paginationSection.innerHTML = '';
+
+    // Add blog posts
+    paginatedPosts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.className = 'blog-post';
+        postElement.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.excerpt}</p>
+            <a href="#" class="cta-button">Read More</a>
+        `;
+        blogPostsSection.appendChild(postElement);
+    });
+
+    // Add pagination
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.href = '#';
+        pageLink.className = 'pagination-link';
+        pageLink.textContent = i;
+        pageLink.onclick = (e) => {
+            e.preventDefault();
+            loadBlogPosts(i);
+        };
+        paginationSection.appendChild(pageLink);
+    }
 }
 
 // Call the function to load blog posts
-loadBlogPosts();
+document.addEventListener('DOMContentLoaded', () => loadBlogPosts());
 
 // Newsletter subscription form handling
 const newsletterForm = document.getElementById('newsletter-form');
