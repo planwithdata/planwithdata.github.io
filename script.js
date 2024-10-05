@@ -48,37 +48,32 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.body.style.backgroundPosition = `${x * 20}px ${y * 20}px`;
     });
-
-    // Handle newsletter subscription
-    const subscribeForm = document.getElementById('subscribe-form');
-    if (subscribeForm) {
-        subscribeForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const emailInput = document.getElementById('email-input');
-            const email = emailInput.value.trim();
-            if (email) {
-                try {
-                    const response = await fetch(subscribeForm.action, {
-                        method: 'POST',
-                        body: new FormData(subscribeForm),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        alert('Thank you for subscribing! You will receive updates on every new post.');
-                        emailInput.value = '';
-                    } else {
-                        throw new Error('Subscription failed');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('An error occurred. Please try again later.');
-                }
-            }
-        });
-    }
 });
 
 
+// Newsletter subscription form handling
+const newsletterForm = document.getElementById('newsletter-form');
+newsletterForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    
+    try {
+        const response = await fetch('https://formspree.io/f/xlderbpo', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        });
+
+        if (response.ok) {
+            alert('Thank you for subscribing to our newsletter!');
+            newsletterForm.reset();
+        } else {
+            throw new Error('Subscription failed. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert(error.message);
+    }
+});
