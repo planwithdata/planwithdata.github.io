@@ -26,10 +26,10 @@ Technologies and Tools:
 - GIS technologies for spatial analysis
 
 Data Sources:
-[Add information about your data sources and collection methods]
+ev.delhi.gov.in and Manufacturer or commercial EV sales websites 
 
 Key Findings:
-[Add your specific findings about EV adoption trends, policy impacts, and market dynamics]
+The rapid growth of the EV market in Delhi is commendable, driven by increasing sales and a general shift towards cleaner, greener mobility. However, the charging station infrastructure is still evolving, with certain gaps in distribution and cost disparities across the city. Addressing these challenges will be key to sustaining the momentum in EV adoption. Investments in expanding charging networks, ensuring affordability, and improving station capacity in underdeveloped areas will be essential as Delhi strives to meet its electric mobility goals.
 
 Links to Project Components:
 - Detailed Report: Available online

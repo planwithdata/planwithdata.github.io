@@ -222,124 +222,67 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
 
         .project-card {
             background-color: var(--bg-secondary);
-            border-radius: 1rem;
-            overflow: hidden;
+            border-radius: 0.75rem;
+            padding: 2rem;
             border: 1px solid var(--border-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: auto;
-            min-height: 500px;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.2);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--bg-card), var(--border-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-
-        .project-image-placeholder {
-            color: var(--text-muted);
-            font-size: 3rem;
-            opacity: 0.3;
-        }
-
-        .project-content {
-            padding: 2rem;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
         }
 
         .project-card h3 {
             color: var(--accent-primary);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            line-height: 1.3;
         }
 
         .project-card p {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
-            line-height: 1.6;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .tag {
-            background: linear-gradient(135deg, var(--bg-card), var(--border-color));
+            background-color: var(--bg-card);
             color: var(--accent-primary);
-            padding: 0.4rem 0.8rem;
-            border-radius: 1.5rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
             font-size: 0.8rem;
             font-weight: 500;
-            border: 1px solid var(--border-color);
         }
 
         .project-links {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
         }
 
         .project-link {
-            background: linear-gradient(135deg, var(--accent-tertiary), var(--accent-secondary));
-            color: white;
+            color: var(--accent-secondary);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 0.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px -5px rgba(59, 130, 246, 0.4);
-        }
-
-        .project-link.secondary {
-            background: transparent;
-            border: 1px solid var(--accent-primary);
             color: var(--accent-primary);
-        }
-
-        .project-link.secondary:hover {
-            background: var(--accent-primary);
-            color: var(--bg-primary);
         }
 
         /* Contact Section */
@@ -385,6 +328,74 @@
         footer p {
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
 
         /* Project Modal */
@@ -509,96 +520,6 @@
 
         .repo-button:hover {
             transform: translateY(-2px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--bg-primary);
-                flex-direction: column;
-                padding: 1rem;
-                border-top: 1px solid var(--border-color);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-text .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .project-card {
-                min-height: 450px;
-            }
-
-            .project-content {
-                padding: 1.5rem;
-            }
-
-            .project-links {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 0.5rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .project-card {
-                min-height: 400px;
-            }
-
-            .project-content {
-                padding: 1rem;
-            }
-
-            .project-card h3 {
-                font-size: 1.2rem;
-            }
         }
 
         /* Smooth scrolling */
@@ -728,199 +649,133 @@
             <div class="container">
                 <h2 class="section-title fade-in">Projects</h2>
                 <div class="projects-grid">
-                    <div class="project-card fade-in" data-project="mining-optimization">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>Mining Optimization & Real-Time Visualization (InstaDigIN)</h3>
+                        <p>Optimized mining workflows (slice plans, haul road analysis, stockpile volume, 3D visualization) using GIS and integrated real-time and historic visualization of mining truck telematics.</p>
+                        <div class="project-tags">
+                            <span class="tag">QGIS</span>
+                            <span class="tag">IoT</span>
+                            <span class="tag">3D Visualization</span>
+                            <span class="tag">Web Maps</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">JS</span>
                         </div>
-                        <div class="project-content">
-                            <h3>Mining Optimization & Real-Time Visualization (InstaDigIN)</h3>
-                            <p class="project-description">Optimized mining workflows (slice plans, haul road analysis, stockpile volume, 3D visualization) using GIS and integrated real-time and historic visualization of mining truck telematics.</p>
-                            <div class="project-tags">
-                                <span class="tag">QGIS</span>
-                                <span class="tag">IoT</span>
-                                <span class="tag">3D Visualization</span>
-                                <span class="tag">Web Maps</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">JS</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openProjectModal('mining-optimization')" class="project-link">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="javascript:void(0)" onclick="openProjectModal('mining-optimization')" class="project-link">Details</a>
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="richmond-demographic">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>Richmond Demographic Analysis (PlanRVA US)</h3>
+                        <p>Richmond livelihood analysis: Median Income by Race and region.</p>
+                        <div class="project-tags">
+                            <span class="tag">Web mapping</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">ArcGIS Pro</span>
                         </div>
-                        <div class="project-content">
-                            <h3>Richmond Demographic Analysis (PlanRVA US)</h3>
-                            <p class="project-description">Richmond livelihood analysis: Median Income by Race and region.</p>
-                            <div class="project-tags">
-                                <span class="tag">Web mapping</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">ArcGIS Pro</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openProjectModal('richmond-demographic')" class="project-link">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="javascript:void(0)" onclick="openProjectModal('richmond-demographic')" class="project-link">Details</a>
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="sentiment-analysis">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-brain"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>Sentiment Analysis (Natural Language Processing)</h3>
+                        <p>Deep Analysis of Public comments on the LRTP (Long Range Transportation Plan) by PlanRVA. This project utilizes Natural Language Processing (NLP) techniques to perform sentiment analysis on public review comments associated with PlanRVA's Public Engagement and Outreach Report, specifically related to the development of the ConnectRVA 2045 Long-Range Transportation Plan.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">AI</span>
                         </div>
-                        <div class="project-content">
-                            <h3>Sentiment Analysis (Natural Language Processing)</h3>
-                            <p class="project-description">Deep Analysis of Public comments on the LRTP (Long Range Transportation Plan) by PlanRVA. This project utilizes Natural Language Processing (NLP) techniques to perform sentiment analysis on public review comments.</p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">NLP</span>
-                                <span class="tag">AI</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openProjectModal('sentiment-analysis')" class="project-link">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="javascript:void(0)" onclick="openProjectModal('sentiment-analysis')" class="project-link">Details</a>
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="ev-sales-delhi">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-car-battery"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>EV Sales in Delhi, IND - 2024</h3>
+                        <p>Dive into the latest trends and insights on electric vehicle adoption in India. Our comprehensive analysis explores market dynamics, policy impacts, and future projections.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">JS</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
                         </div>
-                        <div class="project-content">
-                            <h3>EV Sales in Delhi, IND - 2024</h3>
-                            <p class="project-description">Dive into the latest trends and insights on electric vehicle adoption in India. Our comprehensive analysis explores market dynamics, policy impacts, and future projections.</p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">NLP</span>
-                                <span class="tag">AI</span>
-                                <span class="tag">JS</span>
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://planwithdata.github.io/EV-Sales-India2024/" class="project-link">Read Report</a>
-                                <a href="https://ev-sales-and-charging-infrastructure.onrender.com" class="project-link">EV Dashboard</a>
-                                <a href="https://delhievmap.onrender.com" class="project-link">Delhi EV Map</a>
-                                <a href="javascript:void(0)" onclick="openProjectModal('ev-sales-delhi')" class="project-link secondary">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="https://planwithdata.github.io/EV-Sales-India2024/" class="project-link">Read Report</a>
+                            <a href="https://ev-sales-and-charging-infrastructure.onrender.com" class="project-link">EV Dashboard</a>
+                            <a href="https://delhievmap.onrender.com" class="project-link">Delhi EV Map</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('ev-sales-delhi')" class="project-link">Details</a>
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="heat-sensitivity">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-thermometer-half"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>Heat Sensitivity Index - Richmond, VA</h3>
+                        <p>Deep Analysis of people who are most sensitive to heat stress. This project assesses the vulnerability of different census tracts in Richmond region to heat stress. This index incorporates a variety of socio-economic, health, and demographic variables to provide a comprehensive measure of heat sensitivity.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JS</span>
+                            <span class="tag">GIS</span>
                         </div>
-                        <div class="project-content">
-                            <h3>Heat Sensitivity Index - Richmond, VA</h3>
-                            <p class="project-description">Deep Analysis of people who are most sensitive to heat stress. This project assesses the vulnerability of different census tracts in Richmond region to heat stress.</p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">GIS</span>
-                                <span class="tag">Data Analysis</span>
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">JS</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openProjectModal('heat-sensitivity')" class="project-link">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="javascript:void(0)" onclick="openProjectModal('heat-sensitivity')" class="project-link">Details</a>
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="transportation-madina">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-bus"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>Transportation Analysis using Python library Madina by MIT/City-Form-Lab</h3>
+                        <p>Madina (Arabic for the word 'city') is a package of classes and functions to streamline the representation and analysis of urban networks. The package includes a python implemetation of the Urban Network Analysis Toolbox. This is an implementation of the same package on Richmond, VA.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">GIS</span>
                         </div>
-                        <div class="project-content">
-                            <h3>Transportation Analysis using Python library Madina by MIT/City-Form-Lab</h3>
-                            <p class="project-description">Madina (Arabic for the word 'city') is a package of classes and functions to streamline the representation and analysis of urban networks. Implementation on Richmond, VA.</p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">GIS</span>
-                                <span class="tag">Urban Analysis</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openProjectModal('transportation-madina')" class="project-link">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="javascript:void(0)" onclick="openProjectModal('transportation-madina')" class="project-link">Details</a>
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="sf-housing">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-city"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>GIS Spatial Analysis - Forecasting San Francisco's future Housing and Job growth</h3>
+                        <p>This project assesses the vulnerability of different census tracts in Richmond region to heat stress. This index incorporates a variety of socio-economic, health, and demographic variables to provide a comprehensive measure of heat sensitivity.</p>
+                        <div class="project-tags">
+                            <span class="tag">ArcGIS Pro</span>
+                            <span class="tag">ArcGIS Online</span>
                         </div>
-                        <div class="project-content">
-                            <h3>GIS Spatial Analysis - Forecasting San Francisco's future Housing and Job growth</h3>
-                            <p class="project-description">This project forecasts San Francisco's future housing and job growth using advanced GIS spatial analysis techniques and demographic modeling.</p>
-                            <div class="project-tags">
-                                <span class="tag">ArcGIS Pro</span>
-                                <span class="tag">ArcGIS Online</span>
-                                <span class="tag">Forecasting</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://arcg.is/0LCq5e" target="_blank" class="project-link">View Analysis</a>
-                                <a href="javascript:void(0)" onclick="openProjectModal('sf-housing')" class="project-link secondary">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="https://arcg.is/0LCq5e" target="_blank" class="project-link">View Analysis</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('sf-housing')" class="project-link">Details</a>
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="opioid-analysis">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-heartbeat"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>Opioid Analysis - Deaths and Emergency Visits, Richmond, VA</h3>
+                        <p>An analysis of Deaths and ER Visits for Opioid cases in Richmond, VA.</p>
+                        <div class="project-tags">
+                            <span class="tag">ArcGIS Pro</span>
+                            <span class="tag">MS Excel</span>
+                            <span class="tag">Python</span>
                         </div>
-                        <div class="project-content">
-                            <h3>Opioid Analysis - Deaths and Emergency Visits, Richmond, VA</h3>
-                            <p class="project-description">An analysis of Deaths and ER Visits for Opioid cases in Richmond, VA using comprehensive data cleaning and spatial analysis techniques.</p>
-                            <div class="project-tags">
-                                <span class="tag">ArcGIS Pro</span>
-                                <span class="tag">MS Excel</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Health Data</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openProjectModal('opioid-analysis')" class="project-link">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="javascript:void(0)" onclick="openProjectModal('opioid-analysis')" class="project-link">Details</a>
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="country-analysis">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
+                    <div class="project-card fade-in">
+                        <h3>International Development - A comparison of 5 countries' historical growth</h3>
+                        <p>Examined the development experiences of Japan, Canada, India, US, and South Africa to devise policy insights for urbanization. Analysis includes population, GDP, and urbanization trends with forecasts to 2035.</p>
+                        <div class="project-tags">
+                            <span class="tag">Stata</span>
+                            <span class="tag">ArcGIS Pro</span>
+                            <span class="tag">InDesign</span>
                         </div>
-                        <div class="project-content">
-                            <h3>International Development - A comparison of 5 countries' historical growth</h3>
-                            <p class="project-description">Examined the development experiences of Japan, Canada, India, US, and South Africa to devise policy insights relevant to city and regional planning.</p>
-                            <div class="project-tags">
-                                <span class="tag">Stata</span>
-                                <span class="tag">ArcGIS Pro</span>
-                                <span class="tag">InDesign</span>
-                                <span class="tag">Policy Analysis</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="Project_GIS_CountryAnalysis.pdf" target="_blank" class="project-link">View Report</a>
-                                <a href="javascript:void(0)" onclick="openProjectModal('country-analysis')" class="project-link secondary">View Details</a>
-                            </div>
+                        <div class="project-links">
+                            <a href="Project_GIS_CountryAnalysis.pdf" target="_blank" class="project-link">View Report</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('country-analysis')" class="project-link">Details</a>
                         </div>
                     </div>
                 </div>
@@ -1009,42 +864,16 @@
             observer.observe(el);
         });
 
-        // Load project preview data
-        async function loadProjectPreviews() {
-            const projectIds = ['mining-optimization', 'richmond-demographic', 'sentiment-analysis', 'ev-sales-delhi', 'heat-sensitivity', 'transportation-madina', 'sf-housing', 'opioid-analysis', 'country-analysis'];
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
             
-            for (const projectId of projectIds) {
-                try {
-                    // Load first image for preview
-                    const indexResponse = await fetch(`projects/${projectId}/screenshots/index.json`);
-                    if (indexResponse.ok) {
-                        const imageList = await indexResponse.json();
-                        if (imageList.length > 0) {
-                            const projectCard = document.querySelector(`[data-project="${projectId}"]`);
-                            if (projectCard) {
-                                const imageContainer = projectCard.querySelector('.project-image');
-                                imageContainer.innerHTML = `<img src="projects/${projectId}/screenshots/${imageList[0]}" alt="${projectId} preview">`;
-                            }
-                        }
-                    }
-                    
-                    // Load description for preview
-                    const textResponse = await fetch(`projects/${projectId}/text/description.txt`);
-                    if (textResponse.ok) {
-                        const textContent = await textResponse.text();
-                        const projectCard = document.querySelector(`[data-project="${projectId}"]`);
-                        if (projectCard) {
-                            const description = projectCard.querySelector('.project-description');
-                            // Get first paragraph or first 150 characters
-                            const firstParagraph = textContent.split('\n\n')[0] || textContent.substring(0, 150) + '...';
-                            description.textContent = firstParagraph;
-                        }
-                    }
-                } catch (error) {
-                    console.log(`Could not load preview for ${projectId}`);
-                }
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
             }
-        }
+        });
 
         // Project Modal Functions
         async function openProjectModal(projectId) {
@@ -1074,25 +903,25 @@
             const projectConfig = {
                 'mining-optimization': {
                     title: 'Mining Optimization & Real-Time Visualization (InstaDigIN)',
-                    repoUrl: 'https://github.com/planwithdata/Mining-optimization-with-GIS'
+                    repoUrl: '#'
                 },
                 'richmond-demographic': {
                     title: 'Richmond Demographic Analysis (PlanRVA US)',
-                    repoUrl: 'https://github.com/planwithdata/Regional-Demographics-Visualizations'
+                    repoUrl: '#'
                 },
                 'sentiment-analysis': {
                     title: 'Sentiment Analysis (Natural Language Processing)',
-                    repoUrl: 'https://github.com/planwithdata/Sentiment-Analysis_NLP'
+                    repoUrl: '#'
                 },
                 'ev-sales-delhi': {
                     title: 'EV Sales in Delhi, IND - 2024',
-                    repoUrl: 'https://github.com/planwithdata/EV-Sales-India2024',
-                    repoText: 'View Repository',
-                    repoIcon: 'fab fa-github'
+                    repoUrl: 'https://planwithdata.github.io/EV-Sales-India2024/',
+                    repoText: 'View Report',
+                    repoIcon: 'fas fa-external-link-alt'
                 },
                 'heat-sensitivity': {
                     title: 'Heat Sensitivity Index - Richmond, VA',
-                    repoUrl: 'https://github.com/planwithdata/Heat-Sensitivity-Index-for-Richmond--VA'
+                    repoUrl: '#'
                 },
                 'transportation-madina': {
                     title: 'Transportation Planning - Bus stop reach Analysis, Richmond VA',
@@ -1132,7 +961,7 @@
                     textContent = 'Project description not available.';
                 }
                 
-                // Load images
+                // Load images from index file
                 let imagesHtml = '';
                 try {
                     const indexResponse = await fetch(`projects/${projectId}/screenshots/index.json`);
@@ -1185,17 +1014,6 @@
             document.body.appendChild(fullscreen);
         }
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const nav = document.querySelector('nav');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
-
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('projectModal');
@@ -1203,11 +1021,6 @@
                 closeProjectModal();
             }
         }
-
-        // Load previews when page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(loadProjectPreviews, 1000);
-        });
     </script>
 </body>
 </html>
