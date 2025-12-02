@@ -3,88 +3,623 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan with Data - Urban Insights Blog</title>
-    <meta name="description" content="Explore data-driven urban planning, transit innovations, and environmental solutions at Plan with Data - Urban Insights Blog.">
-    <meta name="keywords" content="urban planning, transit networks, data analysis, sustainability, smart cities, environmental data, GIS, machine learning">
-    <link rel="stylesheet" href="styles.css">
+    <title>Rishabh Singh | Geospatial & Data Engineer</title>
+    <meta name="description" content="Expert GIS Engineer with 6 years experience in sustainability and infrastructure planning. Skilled in Python, R, ArcGIS, and geospatial analysis.">
+    <meta name="keywords" content="GIS Engineer, Data Analyst, Geospatial, Python, ArcGIS, Sustainability, Infrastructure Planning">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="script.js" defer></script>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent-primary: #06b6d4;
+            --accent-secondary: #0ea5e9;
+            --accent-tertiary: #3b82f6;
+            --border-color: #475569;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            padding: 0.875rem 2rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-secondary);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-card h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background-color: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background-color: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .contact-link i {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-primary);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for scroll reveal */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <div class="logo-title-container">
-                <img src="logo_pwd.png" alt="Plan with Data Logo" class="logo">
-                <div class="header-text">
-                    <h1>Plan with Data</h1>
-                    <p class="tagline">Urban Insights Blog</p>
-                </div>
-            </div>
-        </div>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search insights...">
-            <button id="search-button">Search</button>
-        </div>
+        <nav class="container">
+            <div class="logo">Rishabh Singh | Geospatial & Data Engineer</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About/Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
     </header>
 
     <main>
-        <section id="featured-post">
-            <h2>Latest: EV Sales in Delhi, IND - 2024</h2>
-            <p>Dive into the latest trends and insights on electric vehicle adoption in India. Our comprehensive analysis explores market dynamics, policy impacts, and future projections.</p>
-            <div class="button-container">
-                <a href="https://planwithdata.github.io/EV-Sales-India2024/" class="cta-button">Read Detailed Report</a>
-                <a href="https://ev-sales-and-charging-infrastructure.onrender.com" class="cta-button">EV Dashboard</a>
-                <a href="https://delhievmap.onrender.com" class="cta-button">Delhi - EV Infrastructure Map</a>
-            </div>
-        </section>
-
-        <section id="upcoming-research">
-            <h2>Upcoming Research</h2>
-            <div id="research-projects">
-                <div class="research-project">
-                    <h3>EV Sales and Charging Infrastructure in Delhi</h3>
-                    <p>Detailed spatial analysis of electric vehicle sales and charging infrastructure distribution in Delhi.</p>
-                </div>
-                <div class="research-project">
-                    <h3>Competitive EV Rickshaw Analysis</h3>
-                    <p>Predicting the most competitive EV Rickshaw models to challenge CNG-based Rickshaw market leaders.</p>
-                </div>
-                <div class="research-project">
-                    <h3>Delhi Bus Infrastructure Transit Analysis</h3>
-                    <p>Comprehensive transit analysis of Delhi's bus infrastructure to optimize routes and improve service efficiency.</p>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Rishabh Singh</h1>
+                        <p class="subtitle">Geospatial & Data Engineer | Sustainability-Focused Infrastructure Planning</p>
+                        <a href="#projects" class="cta-button">View Portfolio</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="newsletter-signup">
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Stay updated with our latest urban insights and data-driven analyses!</p>
-            <form id="newsletter-form">
-                <input type="email" id="newsletter-email" placeholder="Enter your email" required>
-                <button type="submit" class="cta-button">Subscribe</button>
-            </form>
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title fade-in">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text fade-in">
+                        <p>Expert GIS Engineer with 6 years experience and a strong foundation in analysis of sustainability and infrastructure planning. Skilled in managing geo-spatial data, statistical and geographical analysis, and incorporating sustainability standards to lower emissions via infrastructure planning.</p>
+                        <p>My expertise includes Python, R, ArcGIS Pro/Enterprise, QGIS, and GIS scripting workflows. Proven track record in delivering insightful geo-spatial web-apps, reports, and data-driven solutions to clients and organizations needing spatial analytics for infrastructure and sustainability.</p>
+                    </div>
+                    <div class="skills-grid fade-in">
+                        <div class="skill-category">
+                            <h3>Geospatial Technologies</h3>
+                            <p>ArcGIS Pro and QGIS, ArcGIS Python and JS API, Google Earth Engine, Geospatial Data Management</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Programming & Data</h3>
+                            <p>Python Programming, R programming, Data Analysis, Web Scraping</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Databases & Cloud</h3>
+                            <p>PostgreSQL, AWS</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Modeling & Tools</h3>
+                            <p>ML and AI Concepts, Web App Development, MS Excel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title fade-in">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <h3>Mining Optimization & Real-Time Visualization (InstaDigIN)</h3>
+                        <p>Optimized mining workflows (slice plans, haul road analysis, stockpile volume, 3D visualization) using GIS and integrated real-time and historic visualization of mining truck telematics.</p>
+                        <div class="project-tags">
+                            <span class="tag">QGIS</span>
+                            <span class="tag">IoT</span>
+                            <span class="tag">3D Visualization</span>
+                            <span class="tag">Web Maps</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Details</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <h3>Richmond Demographic Analysis (PlanRVA US)</h3>
+                        <p>Richmond livelihood analysis: Median Income by Race and region.</p>
+                        <div class="project-tags">
+                            <span class="tag">Web mapping</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">ArcGIS Pro</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Details</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <h3>Sentiment Analysis (Natural Language Processing)</h3>
+                        <p>Deep Analysis of Public comments on the LRTP (Long Range Transportation Plan) by PlanRVA. This project utilizes Natural Language Processing (NLP) techniques to perform sentiment analysis on public review comments associated with PlanRVA's Public Engagement and Outreach Report, specifically related to the development of the ConnectRVA 2045 Long-Range Transportation Plan.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Details</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <h3>EV Sales in Delhi, IND - 2024</h3>
+                        <p>Dive into the latest trends and insights on electric vehicle adoption in India. Our comprehensive analysis explores market dynamics, policy impacts, and future projections.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">JS</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://planwithdata.github.io/EV-Sales-India2024/" class="project-link">Read Report</a>
+                            <a href="https://ev-sales-and-charging-infrastructure.onrender.com" class="project-link">EV Dashboard</a>
+                            <a href="https://delhievmap.onrender.com" class="project-link">Delhi EV Map</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <h3>Heat Sensitivity Index - Richmond, VA</h3>
+                        <p>Deep Analysis of people who are most sensitive to heat stress. This project assesses the vulnerability of different census tracts in Richmond region to heat stress. This index incorporates a variety of socio-economic, health, and demographic variables to provide a comprehensive measure of heat sensitivity.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JS</span>
+                            <span class="tag">GIS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title fade-in">Contact</h2>
+                <div class="contact-links fade-in">
+                    <a href="mailto:rishabhsingh.fin@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        rishabhsingh.fin@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/rishabhsingh9512/" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/planwithdata" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <a href="https://theurbananalytics.com" class="main-site-button">Visit Author's Website</a>
-
     <footer>
-        <nav>
-            <ul>
-                <li><a href="https://github.com/planwithdata" class="social-link github"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.youtube.com/@theurbananalytics" class="social-link youtube"><i class="fab fa-youtube"></i></a></li>
-                <li><a href="https://x.com/planwithdata" class="social-link twitter"><i class="fab fa-x"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/plan-with-data/" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-            </ul>
-        </nav>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2024 Plan With Data. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Rishabh Singh. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
