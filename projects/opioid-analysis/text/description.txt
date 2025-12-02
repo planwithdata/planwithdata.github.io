@@ -1,0 +1,36 @@
+Opioid Analysis for Virginia: Naloxone VACP Report
+
+Project Overview:
+An analysis of Deaths and ER Visits for Opioid cases in Richmond, VA. This comprehensive study examines patterns, trends, and geographic distribution of opioid-related incidents to inform public health policy and intervention strategies.
+
+Data Sources:
+- Virginia Department of Health records
+- Emergency room visit data
+- Naloxone distribution records
+- Demographic and socioeconomic data
+
+Analysis Components:
+- Temporal trend analysis of opioid deaths and ER visits
+- Spatial distribution mapping
+- Demographic pattern identification
+- Risk factor analysis
+- Intervention effectiveness assessment
+
+Methodology:
+- Data cleaning and preprocessing using Python
+- Statistical analysis and trend identification
+- GIS mapping using ArcGIS Pro
+- Excel for data management and reporting
+- Visualization and dashboard creation
+
+Key Findings:
+[Add your key findings here]
+
+Policy Implications:
+[Add policy recommendations and implications here]
+
+Tools Used:
+- ArcGIS Pro for spatial analysis
+- MS Excel for data management
+- Python for data cleaning and analysis
+- Statistical analysis packages

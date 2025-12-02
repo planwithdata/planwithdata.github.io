@@ -1,0 +1,38 @@
+Transportation Planning - Bus stop reach Analysis, Richmond VA
+
+Project Overview:
+Madina (Arabic for the word 'city') is a package of classes and functions to streamline the representation and analysis of urban networks. The package includes a python implementation of the Urban Network Analysis Toolbox. This is an implementation of the same package on Richmond, VA.
+
+About Madina Library:
+- Developed by MIT/City-Form-Lab
+- Streamlines urban network analysis
+- Python implementation of Urban Network Analysis Toolbox
+- Focuses on accessibility and connectivity metrics
+
+Implementation Details:
+- Applied Madina library to Richmond, VA transportation network
+- Analyzed bus stop accessibility and reach
+- Calculated network metrics and connectivity indices
+- Generated insights for transportation planning
+
+Key Analysis Components:
+🚐 Bus Stop Accessibility in a 300 m network radius for Richmond, VA building address points.
+
+Created using K Nearest Neighbor Scoring Methodology, in the hashtag#madina package. KNN Access gives a final accessibility score for how accessible bus stops are for all building address points in the city. Weighting includes giving the score for nearest 2 bus stops with the 1st stop adding a large weight than the 2nd bus stop. I have changed the legend to categories but it shows a score ranging from 0 to 1 for accessibility that helps rate each building point. 
+
+This can have many applications -
+- It can help understand where to develop new bus stops.
+- It can help reason with why developing bus stops in a region is important. 
+- Using it for other facilities (Parks, hospitals, schools) than bus stops with different distance and weighting methodology.
+- Biking Accessibility using higher distance radius. 
+
+Results:
+The final maps show how many buildings in Richmond still are far away from any bus stops and public transport and have to walk or drive daily. 
+
+Applications:
+- Transportation planning optimization
+- Public transit accessibility assessment
+- Urban mobility analysis
+- Infrastructure development guidance
+
+Thanks to Andres Sevtsuk and Abdulaziz Alhassan for developing and open sourcing this library. 

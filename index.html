@@ -101,7 +101,25 @@
             display: flex;
             align-items: center;
             padding-top: 80px;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80') center/cover;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.3);
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
@@ -380,6 +398,130 @@
             }
         }
 
+        /* Project Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--bg-secondary);
+            margin: 2% auto;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-title {
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .close {
+            color: var(--text-muted);
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: var(--accent-primary);
+        }
+
+        .modal-body {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .modal-body h3 {
+            color: var(--accent-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body p {
+            margin-bottom: 1rem;
+        }
+
+        .modal-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .modal-images img {
+            width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-images img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .image-fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .repo-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-tertiary), var(--accent-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .repo-button:hover {
+            transform: translateY(-2px);
+        }
+
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
@@ -473,7 +615,7 @@
                             <span class="tag">JS</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">Details</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('mining-optimization')" class="project-link">Details</a>
                         </div>
                     </div>
 
@@ -486,7 +628,7 @@
                             <span class="tag">ArcGIS Pro</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">Details</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('richmond-demographic')" class="project-link">Details</a>
                         </div>
                     </div>
 
@@ -499,7 +641,7 @@
                             <span class="tag">AI</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">Details</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('sentiment-analysis')" class="project-link">Details</a>
                         </div>
                     </div>
 
@@ -518,6 +660,7 @@
                             <a href="https://planwithdata.github.io/EV-Sales-India2024/" class="project-link">Read Report</a>
                             <a href="https://ev-sales-and-charging-infrastructure.onrender.com" class="project-link">EV Dashboard</a>
                             <a href="https://delhievmap.onrender.com" class="project-link">Delhi EV Map</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('ev-sales-delhi')" class="project-link">Details</a>
                         </div>
                     </div>
 
@@ -534,7 +677,59 @@
                             <span class="tag">GIS</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">Details</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('heat-sensitivity')" class="project-link">Details</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <h3>Transportation Analysis using Python library Madina by MIT/City-Form-Lab</h3>
+                        <p>Madina (Arabic for the word 'city') is a package of classes and functions to streamline the representation and analysis of urban networks. The package includes a python implemetation of the Urban Network Analysis Toolbox. This is an implementation of the same package on Richmond, VA.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">GIS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="javascript:void(0)" onclick="openProjectModal('transportation-madina')" class="project-link">Details</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <h3>GIS Spatial Analysis - Forecasting San Francisco's future Housing and Job growth</h3>
+                        <p>This project assesses the vulnerability of different census tracts in Richmond region to heat stress. This index incorporates a variety of socio-economic, health, and demographic variables to provide a comprehensive measure of heat sensitivity.</p>
+                        <div class="project-tags">
+                            <span class="tag">ArcGIS Pro</span>
+                            <span class="tag">ArcGIS Online</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://arcg.is/0LCq5e" target="_blank" class="project-link">View Analysis</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('sf-housing')" class="project-link">Details</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <h3>Opioid Analysis - Deaths and Emergency Visits, Richmond, VA</h3>
+                        <p>An analysis of Deaths and ER Visits for Opioid cases in Richmond, VA.</p>
+                        <div class="project-tags">
+                            <span class="tag">ArcGIS Pro</span>
+                            <span class="tag">MS Excel</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="javascript:void(0)" onclick="openProjectModal('opioid-analysis')" class="project-link">Details</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <h3>International Development - A comparison of 5 countries' historical growth</h3>
+                        <p>Examined the development experiences of Japan, Canada, India, US, and South Africa to devise policy insights for urbanization. Analysis includes population, GDP, and urbanization trends with forecasts to 2035.</p>
+                        <div class="project-tags">
+                            <span class="tag">Stata</span>
+                            <span class="tag">ArcGIS Pro</span>
+                            <span class="tag">InDesign</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="Project_GIS_CountryAnalysis.pdf" target="_blank" class="project-link">View Report</a>
+                            <a href="javascript:void(0)" onclick="openProjectModal('country-analysis')" class="project-link">Details</a>
                         </div>
                     </div>
                 </div>
@@ -567,6 +762,19 @@
             <p>&copy; 2024 Rishabh Singh. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Project Details</h2>
+                <span class="close" onclick="closeProjectModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Project details will be loaded here -->
+            </div>
+        </div>
+    </div>
 
     <script>
         // Mobile menu toggle
@@ -620,6 +828,153 @@
                 navLinks.classList.remove('active');
             }
         });
+
+        // Project Modal Functions
+        async function openProjectModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            // Show loading state
+            modalTitle.textContent = 'Loading...';
+            modalBody.innerHTML = '<p>Loading project details...</p>';
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Load project data
+            const projectData = await getProjectData(projectId);
+            modalTitle.textContent = projectData.title;
+            modalBody.innerHTML = projectData.content;
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        async function getProjectData(projectId) {
+            const projectConfig = {
+                'mining-optimization': {
+                    title: 'Mining Optimization & Real-Time Visualization (InstaDigIN)',
+                    repoUrl: '#'
+                },
+                'richmond-demographic': {
+                    title: 'Richmond Demographic Analysis (PlanRVA US)',
+                    repoUrl: '#'
+                },
+                'sentiment-analysis': {
+                    title: 'Sentiment Analysis (Natural Language Processing)',
+                    repoUrl: '#'
+                },
+                'ev-sales-delhi': {
+                    title: 'EV Sales in Delhi, IND - 2024',
+                    repoUrl: 'https://planwithdata.github.io/EV-Sales-India2024/',
+                    repoText: 'View Report',
+                    repoIcon: 'fas fa-external-link-alt'
+                },
+                'heat-sensitivity': {
+                    title: 'Heat Sensitivity Index - Richmond, VA',
+                    repoUrl: '#'
+                },
+                'transportation-madina': {
+                    title: 'Transportation Planning - Bus stop reach Analysis, Richmond VA',
+                    repoUrl: '#'
+                },
+                'sf-housing': {
+                    title: 'GIS Spatial Analysis - Forecasting San Francisco\'s future Housing and Job growth',
+                    repoUrl: 'https://arcg.is/0LCq5e',
+                    repoText: 'View GIS Analysis',
+                    repoIcon: 'fas fa-external-link-alt'
+                },
+                'opioid-analysis': {
+                    title: 'Opioid Analysis for Virginia: Naloxone VACP Report',
+                    repoUrl: '#'
+                },
+                'country-analysis': {
+                    title: 'International Development - A comparison of 5 countries\' historical growth',
+                    repoUrl: 'Project_GIS_CountryAnalysis.pdf',
+                    repoText: 'View Full Report',
+                    repoIcon: 'fas fa-file-pdf'
+                }
+            };
+            
+            const config = projectConfig[projectId];
+            if (!config) {
+                return { title: 'Project Not Found', content: '<p>Project details not available.</p>' };
+            }
+            
+            try {
+                // Load text content
+                const textResponse = await fetch(`projects/${projectId}/text/description.txt`);
+                let textContent = '';
+                if (textResponse.ok) {
+                    textContent = await textResponse.text();
+                    textContent = textContent.replace(/\n/g, '<br>');
+                } else {
+                    textContent = 'Project description not available.';
+                }
+                
+                // Load images from index file
+                let imagesHtml = '';
+                try {
+                    const indexResponse = await fetch(`projects/${projectId}/screenshots/index.json`);
+                    if (indexResponse.ok) {
+                        const imageList = await indexResponse.json();
+                        for (const imgName of imageList) {
+                            imagesHtml += `<img src="projects/${projectId}/screenshots/${imgName}" alt="${imgName}" onclick="openImageFullscreen(this.src)">`;
+                        }
+                    }
+                } catch (e) {
+                    // Index file doesn't exist or error loading
+                }
+                
+                if (!imagesHtml) {
+                    imagesHtml = '<p>No screenshots available. Add any images to the screenshots folder and run update_images.py</p>';
+                }
+                
+                const repoIcon = config.repoIcon || 'fab fa-github';
+                const repoText = config.repoText || 'View Repository';
+                
+                const content = `
+                    <div style="white-space: pre-line;">${textContent}</div>
+                    
+                    <h3>Screenshots</h3>
+                    <div class="modal-images">
+                        ${imagesHtml}
+                    </div>
+                    
+                    <a href="${config.repoUrl}" class="repo-button" target="_blank">
+                        <i class="${repoIcon}"></i> ${repoText}
+                    </a>
+                `;
+                
+                return { title: config.title, content };
+                
+            } catch (error) {
+                return {
+                    title: config.title,
+                    content: '<p>Error loading project details. Please try again later.</p>'
+                };
+            }
+        }
+
+        // Image fullscreen functions
+        function openImageFullscreen(src) {
+            const fullscreen = document.createElement('div');
+            fullscreen.className = 'image-fullscreen';
+            fullscreen.innerHTML = `<img src="${src}" alt="Fullscreen image">`;
+            fullscreen.onclick = () => document.body.removeChild(fullscreen);
+            document.body.appendChild(fullscreen);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                closeProjectModal();
+            }
+        }
     </script>
 </body>
 </html>

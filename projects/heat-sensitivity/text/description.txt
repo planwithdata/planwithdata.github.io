@@ -1,0 +1,22 @@
+Heat Sensitivity Index - Richmond, VA
+
+Project Overview:
+This project assesses the vulnerability of different census tracts in Richmond region to heat stress. This index incorporates a variety of socio-economic, health, and demographic variables to provide a comprehensive measure of heat sensitivity.
+
+Methodology:
+- Data collection from census and health departments
+- Statistical analysis using Python
+- GIS mapping and spatial analysis
+- Index calculation and validation
+
+Key Findings:
+[Add your key findings here]
+
+Technologies Used:
+- Python for data analysis
+- ArcGIS for spatial analysis
+- Statistical modeling techniques
+- Web development for visualization
+
+Impact:
+[Describe the impact and applications of this analysis]

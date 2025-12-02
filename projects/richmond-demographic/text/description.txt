@@ -1,0 +1,33 @@
+Richmond Demographic Analysis (PlanRVA US)
+
+Project Overview:
+Comprehensive demographic analysis of Richmond region focusing on livelihood patterns, specifically examining median income distribution by race and geographic region. This analysis provides crucial insights for urban planning and policy development.
+
+Analysis Components:
+- Median income analysis by racial demographics
+- Geographic distribution patterns across Richmond region
+- Socioeconomic mapping and visualization
+- Statistical analysis of demographic trends
+- Policy implications and recommendations
+
+Methodology:
+- Data collection from census and regional sources
+- Statistical analysis and data processing
+- Web mapping for interactive visualization
+- ArcGIS Pro for advanced spatial analysis
+- Python for data cleaning and analysis
+
+Key Findings:
+[Add your specific findings about income disparities and geographic patterns]
+
+Tools and Technologies:
+- Web mapping platforms for public accessibility
+- Python for data processing and statistical analysis
+- ArcGIS Pro for comprehensive spatial analysis
+- Data visualization libraries
+
+Applications:
+- Urban planning decision support
+- Policy development guidance
+- Community development initiatives
+- Resource allocation planning

@@ -1,0 +1,32 @@
+GIS Spatial Analysis - Forecasting San Francisco's future Housing and Job growth
+
+Project Overview:
+This project forecasts San Francisco's future housing and job growth using advanced GIS spatial analysis techniques and demographic modeling.
+
+Analysis Components:
+- Historical housing development patterns
+- Employment growth trends
+- Population demographics analysis
+- Spatial distribution modeling
+- Future growth projections
+
+Methodology:
+- ArcGIS Pro for spatial analysis
+- ArcGIS Online for web mapping and visualization
+- Statistical modeling for forecasting
+- Demographic data integration
+- Economic indicators analysis
+
+Key Research Questions:
+[Add your specific research questions here]
+
+Findings:
+[Add your key findings and projections here]
+
+Deliverables:
+- Interactive web maps
+- Growth projection models
+- Policy recommendations
+- Spatial analysis reports
+
+Link to Analysis: https://arcg.is/0LCq5e

@@ -1,0 +1,26 @@
+Mining Optimization & Real-Time Visualization (InstaDigIN)
+
+Project Overview:
+Optimized mining workflows including slice plans, haul road analysis, stockpile volume calculations, and 3D visualization using GIS technologies. Integrated real-time and historic visualization of mining truck telematics for comprehensive operational insights.
+
+Key Components:
+- Slice plan optimization for efficient mining operations
+- Haul road analysis and route optimization
+- Stockpile volume calculations and monitoring
+- 3D visualization of mining operations
+- Real-time truck telematics integration
+- Historic data analysis and reporting
+
+Technologies Used:
+- QGIS for spatial analysis and mapping
+- IoT systems for real-time data collection
+- 3D visualization tools and libraries
+- Web mapping technologies
+- Python for data processing and analysis
+- JavaScript for interactive web applications
+
+Achievements:
+[Add your specific achievements and results here]
+
+Impact:
+[Describe the operational improvements and efficiency gains]

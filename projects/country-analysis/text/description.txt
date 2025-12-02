@@ -1,0 +1,40 @@
+International Development - A comparison of 5 countries' historical growth
+
+Project Overview:
+Examined the development experiences of individual nations (Japan, Canada, India, US, South Africa) in order to devise a set of policy insights relevant to city and regional planning.
+
+Research Questions Addressed:
+• How have the trajectories of population, real GDP, real GDP per capita, and urbanization evolved over the past 60 years?
+• Explanation of these trends, with reference to deeper library research, statistical analysis, and data gathering
+• Forecasting population, real GDP, real GDP per capita, and urbanization levels for 2025, 2030, and 2035
+• Geographic analysis of where growth and change impacts will be experienced within the nations
+• Comparison of recent socioeconomic outcomes relevant to the selected nations
+• Stylized facts and general recommendations for policymakers
+
+Countries Analyzed:
+1. Japan - Post-war reconstruction and economic miracle
+2. Canada - Resource-based economy and urbanization
+3. India - Emerging economy and rapid urbanization
+4. United States - Mature economy and suburban development
+5. South Africa - Post-apartheid development challenges
+
+Methodology:
+- Historical data analysis using Stata
+- Spatial analysis using ArcGIS Pro
+- Report design and layout using InDesign
+- Statistical modeling and forecasting
+- Comparative policy analysis
+
+Key Deliverables:
+- Comprehensive analytical report
+- Statistical models and forecasts
+- Policy recommendations
+- Comparative analysis framework
+
+Tools Used:
+- Stata for statistical analysis
+- ArcGIS Pro for spatial analysis and mapping
+- InDesign for report design and layout
+- Various data sources and databases
+
+Report: Available as Project_GIS_CountryAnalysis.pdf
