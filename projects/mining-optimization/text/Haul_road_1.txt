@@ -1,0 +1,1 @@
+App UI for the haul road analysis. Takes inputs in the form of DEM (Digital Elevation Model)) and Road vector layer to create a color coded route visualization for slope. This works with DEM and can also use data from IOT devices as has been implemented in another app (Route Replay).

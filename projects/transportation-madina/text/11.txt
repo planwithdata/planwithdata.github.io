@@ -1,0 +1,1 @@
+Zoomed out view - Network connectivity metrics showing how reach is calculated using distance on road and not using spatial displacement. The blue dot is a bus stop with red buildings and blue catchment area for the bus stop. 

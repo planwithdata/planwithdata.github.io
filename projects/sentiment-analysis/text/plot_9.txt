@@ -1,0 +1,1 @@
+Pie chart visualization of all comments received for a single project into support scores. 

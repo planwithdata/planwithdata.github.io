@@ -475,6 +475,18 @@
             transform: scale(1.05);
         }
 
+        .image-container {
+            text-align: center;
+        }
+
+        .image-caption {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
         .image-fullscreen {
             position: fixed;
             top: 0;
@@ -1010,7 +1022,7 @@
                     }
                     
                     // Load description for preview
-                    const textResponse = await fetch(`projects/${projectId}/text/description.txt`);
+                    const textResponse = await fetch(`projects/${projectId}/text/description.txt?v=${Date.now()}`);
                     if (textResponse.ok) {
                         const textContent = await textResponse.text();
                         const projectCard = document.querySelector(`[data-project="${projectId}"]`);
@@ -1101,7 +1113,7 @@
             
             try {
                 // Load text content
-                const textResponse = await fetch(`projects/${projectId}/text/description.txt`);
+                const textResponse = await fetch(`projects/${projectId}/text/description.txt?v=${Date.now()}`);
                 let textContent = '';
                 if (textResponse.ok) {
                     textContent = await textResponse.text();
@@ -1110,14 +1122,31 @@
                     textContent = 'Project description not available.';
                 }
                 
-                // Load images
+                // Load images with captions
                 let imagesHtml = '';
                 try {
                     const indexResponse = await fetch(`projects/${projectId}/screenshots/index.json`);
                     if (indexResponse.ok) {
                         const imageList = await indexResponse.json();
                         for (const imgName of imageList) {
-                            imagesHtml += `<img src="projects/${projectId}/screenshots/${imgName}" alt="${imgName}" onclick="openImageFullscreen(this.src)">`;
+                            // Try to load caption for this image
+                            let caption = '';
+                            try {
+                                const captionName = imgName.replace(/\.[^/.]+$/, '') + '.txt';
+                                const captionResponse = await fetch(`projects/${projectId}/text/${captionName}?v=${Date.now()}`);
+                                if (captionResponse.ok) {
+                                    caption = await captionResponse.text();
+                                }
+                            } catch (e) {
+                                // Caption file doesn't exist
+                            }
+                            
+                            imagesHtml += `
+                                <div class="image-container">
+                                    <img src="projects/${projectId}/screenshots/${imgName}" alt="${imgName}" onclick="openImageFullscreen(this.src)">
+                                    ${caption ? `<div class="image-caption">${caption}</div>` : ''}
+                                </div>
+                            `;
                         }
                     }
                 } catch (e) {

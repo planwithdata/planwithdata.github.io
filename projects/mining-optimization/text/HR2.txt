@@ -1,0 +1,1 @@
+Haul road slope visualized as green to red showing less to more steep slopes. 

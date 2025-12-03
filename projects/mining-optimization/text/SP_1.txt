@@ -1,0 +1,1 @@
+2D slice planning app initial view demonstrating features of marking, unmarking, finalizing the day's drilling via sliceplan.  

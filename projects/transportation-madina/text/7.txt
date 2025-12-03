@@ -1,0 +1,1 @@
+Buildings served score calculated by a default distance threshold for all bus stops in Richmond region, VA.

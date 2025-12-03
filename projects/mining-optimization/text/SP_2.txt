@@ -1,0 +1,1 @@
+Sliceplan view - grid layer for planning where mining is to take place.

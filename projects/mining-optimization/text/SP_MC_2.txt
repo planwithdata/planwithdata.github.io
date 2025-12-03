@@ -1,0 +1,1 @@
+Final visualization - Sliceplan planning with borehole data interpolated to create a mineral content visualization in 2D. 

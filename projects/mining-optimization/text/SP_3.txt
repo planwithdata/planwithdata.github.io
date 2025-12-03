@@ -1,0 +1,1 @@
+Mining plan - Red marked boxes in the grid shows marked boxes for drilling. This helps in clear visualization and planning with geospatial imagery view for better analysis.

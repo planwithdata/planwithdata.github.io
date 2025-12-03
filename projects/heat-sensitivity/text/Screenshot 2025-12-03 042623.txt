@@ -1,0 +1,1 @@
+Health vulnerability - created by health variables. Used for creation of the composite heat vulnerability. 

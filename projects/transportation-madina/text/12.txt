@@ -1,0 +1,1 @@
+Neighborhood analysis - Calor categorization by which bus stop would serve a building and regions that are far away from any bus stop.

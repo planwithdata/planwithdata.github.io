@@ -1,0 +1,1 @@
+Spatial analysis results showing projected housing density patterns and job growth corridors across San Francisco.

@@ -1,0 +1,1 @@
+Mineral content from borehole data can be overlayed on this sliceplan as point data. 

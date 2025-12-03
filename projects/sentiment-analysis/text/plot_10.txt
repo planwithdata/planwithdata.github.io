@@ -1,0 +1,1 @@
+Final sentiment analysis summary dashboard displaying comprehensive insights from public transportation comments for all projects using pie chart the shows the support for green, skeptism for yellow and opposition for red.
