@@ -18,7 +18,7 @@ Methodology:
 - Python for data cleaning and analysis
 
 Key Findings:
-[Add your specific findings about income disparities and geographic patterns]
+The maps show the regional and racial differences between educational attainment, income and other demographic metrics helping communities analyze what is happening right and what is not, which helps in devising policies that need to be targeted for specific solutions. 
 
 Tools and Technologies:
 - Web mapping platforms for public accessibility

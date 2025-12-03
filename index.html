@@ -881,26 +881,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card fade-in" data-project="opioid-analysis">
-                        <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-heartbeat"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Opioid Analysis - Deaths and Emergency Visits, Richmond, VA</h3>
-                            <p class="project-description">An analysis of Deaths and ER Visits for Opioid cases in Richmond, VA using comprehensive data cleaning and spatial analysis techniques.</p>
-                            <div class="project-tags">
-                                <span class="tag">ArcGIS Pro</span>
-                                <span class="tag">MS Excel</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Health Data</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="javascript:void(0)" onclick="openProjectModal('opioid-analysis')" class="project-link">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="project-card fade-in" data-project="country-analysis">
                         <div class="project-image">
@@ -1011,7 +992,7 @@
 
         // Load project preview data
         async function loadProjectPreviews() {
-            const projectIds = ['mining-optimization', 'richmond-demographic', 'sentiment-analysis', 'ev-sales-delhi', 'heat-sensitivity', 'transportation-madina', 'sf-housing', 'opioid-analysis', 'country-analysis'];
+            const projectIds = ['mining-optimization', 'richmond-demographic', 'sentiment-analysis', 'ev-sales-delhi', 'heat-sensitivity', 'transportation-madina', 'sf-housing', 'country-analysis'];
             
             for (const projectId of projectIds) {
                 try {
@@ -1104,10 +1085,7 @@
                     repoText: 'View GIS Analysis',
                     repoIcon: 'fas fa-external-link-alt'
                 },
-                'opioid-analysis': {
-                    title: 'Opioid Analysis for Virginia: Naloxone VACP Report',
-                    repoUrl: '#'
-                },
+
                 'country-analysis': {
                     title: 'International Development - A comparison of 5 countries\' historical growth',
                     repoUrl: 'Project_GIS_CountryAnalysis.pdf',

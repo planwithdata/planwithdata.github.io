@@ -10,7 +10,7 @@ Methodology:
 - Index calculation and validation
 
 Key Findings:
-[Add your key findings here]
+Population in the Richmond urban center is more vulnerable to heat stress with sub regions like south Richmond, west Henrico, and Charles City being highlighted more than others.
 
 Technologies Used:
 - Python for data analysis
@@ -19,4 +19,4 @@ Technologies Used:
 - Web development for visualization
 
 Impact:
-[Describe the impact and applications of this analysis]
+This index can be used to identify vulnerable areas and guide resource allocation and policy interventions to mitigate the effects of heat stress.

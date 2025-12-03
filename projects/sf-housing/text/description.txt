@@ -1,32 +1,68 @@
-GIS Spatial Analysis - Forecasting San Francisco's future Housing and Job growth
+GIS Spatial Analysis – Forecasting San Francisco’s Future Housing and Job Growth
 
-Project Overview:
-This project forecasts San Francisco's future housing and job growth using advanced GIS spatial analysis techniques and demographic modeling.
+Project Overview
 
-Analysis Components:
-- Historical housing development patterns
-- Employment growth trends
-- Population demographics analysis
-- Spatial distribution modeling
-- Future growth projections
+This project forecasts San Francisco’s future housing and job growth using advanced GIS spatial analysis techniques and long-range California planning datasets. The work visualizes how employment growth across different sectors compares with projected housing capacity, highlighting potential pressure points on the city’s infrastructure, livability, and workforce accessibility.
 
-Methodology:
-- ArcGIS Pro for spatial analysis
-- ArcGIS Online for web mapping and visualization
-- Statistical modeling for forecasting
-- Demographic data integration
-- Economic indicators analysis
+---
 
-Key Research Questions:
-[Add your specific research questions here]
+Analysis Components
 
-Findings:
-[Add your key findings and projections here]
+* Historical housing development patterns
+* Employment growth trends across major job domains
+* Population demographics and workforce distributions
+* Spatial distribution modeling for future demand
+* Long-term growth projections (to 2050)
 
-Deliverables:
-- Interactive web maps
-- Growth projection models
-- Policy recommendations
-- Spatial analysis reports
+---
 
-Link to Analysis: https://arcg.is/0LCq5e
+Methodology
+
+* Spatial analysis and geoprocessing in **ArcGIS Pro**
+* 3D web mapping and visualization in **ArcGIS Online**
+* Statistical and demographic forecasting models
+* Integration of California long-range planning datasets
+* Economic and industry-specific indicators analysis
+
+---
+
+Key Research Questions
+
+* How will jobs across major sectors (tech, healthcare, education, retail, logistics, etc.) spatially grow across San Francisco by 2050?
+* Will projected housing capacity keep pace with the forecasted employment growth?
+* Which neighborhoods will experience the highest imbalance between jobs and housing availability?
+* What spatial patterns indicate emerging growth corridors or potential stress zones?
+* How do demographic shifts influence where new housing or job centers should be prioritized?
+
+---
+
+Findings
+
+* Significant job growth is expected in major commercial corridors, particularly in tech-dense and downtown blocks, with certain sectors projected to expand disproportionately to housing availability.
+* Multiple neighborhoods show **clear job–housing imbalances**, indicating potential future strain on transportation, affordability, and urban infrastructure.
+* Several blocks show high employment density growth (visualized as rising 3D job pillars), while nearby blocks display stagnant or limited housing capacity.
+* Forecasted 2050 housing availability is **not aligned** with projected job growth, creating future stress on the city’s workforce accommodation and commute patterns.
+* Spatial modeling highlights the need for **targeted up-zoning, improved transit connectivity, and mixed-use development planning** to support balanced growth.
+
+---
+
+Deliverables
+
+* Interactive 3D web maps visualizing 2050 job and housing projections
+* Spatial forecasting models for sector-wise job growth
+* Policy recommendations for balanced land-use and transit-oriented planning
+* Geographic insight reports comparing housing capacity vs. job expansion
+
+---
+
+Link to Analysis
+
+https://arcg.is/0LCq5e
+
+---
+
+Additional Context
+
+This project uses California long-range planning data to model and compare growth scenarios in an **AGOL 3D environment**. The map visualizes each block as a vertical pillar, showing the number of jobs across different domains and the corresponding housing capacity projected for 2050. The comparison highlights how much pressure San Francisco will face if job growth outpaces new housing supply.
+
+---

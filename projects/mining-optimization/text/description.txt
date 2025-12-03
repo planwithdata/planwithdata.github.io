@@ -20,7 +20,14 @@ Technologies Used:
 - JavaScript for interactive web applications
 
 Achievements:
-[Add your specific achievements and results here]
+Automated drill planning using sliceplan and visualization of borehole data using spatial interpolation.
+Haul road analysis based on slope and fuel consumption.
+Historic route replay and route analytics using IOT data to create (slope, network coverage, speed, time spent) analytics and related visualization.  
+Implementation of all POCs in react.js.
 
 Impact:
-[Describe the operational improvements and efficiency gains]
+- Accelerated mine planning cycles by automating sliceplan generation and integrating interpolation-based grade visualization.
+- Improved haul road quality and reduced equipment strain by identifying slope anomalies and inefficient segments using IoT+GIS analytics.
+- Enhanced fleet productivity with real-time GPS, speed, network coverage, and stoppage visualizations that support shift-level decision-making.
+- Provided actionable historic insights (heatmaps, route patterns, fuel-impact zones), directly contributing to better shift planning and reduced downtime.
+- Built an end-to-end web mapping ecosystem (React + Python + GIS) that can plug into live databases, reducing dependence on manual software workflows.

@@ -25,13 +25,13 @@ Key Technologies:
 - Statistical analysis packages
 
 Analysis Components:
-[Add details about your specific NLP techniques and models used]
+This project leverages the BART-large-mnli model, a powerful transformer-based model known for its effectiveness in Natural Language Understanding (NLU) tasks. The model is utilized here for zero-shot text classification, a technique allowing the classification of text into predefined categories without the need for labeled training data.
 
 Results and Insights:
-[Add your key findings about public sentiment regarding transportation planning]
+The sentiment analysis reveals the community's general attitudes towards the proposed transportation projects. By categorizing the public's responses, we can discern which projects garnered the most support, faced opposition, or were met with skepticism. These insights can aid stakeholders in making informed decisions and addressing community concerns.
 
 Impact:
 - Enhanced understanding of public opinion on transportation planning
 - Data-driven insights for policy development
 - Improved public engagement strategies
-- Evidence-based decision making for ConnectRVA 2045
+- Evidence-based decision making for ConnectRVA 2045. 
