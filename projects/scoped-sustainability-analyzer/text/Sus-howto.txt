@@ -1,0 +1,1 @@
+Popup shows how app works to calculate the sustainability score

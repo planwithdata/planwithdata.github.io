@@ -895,6 +895,29 @@
 
 
 
+                    <div class="project-card fade-in" data-project="scoped-sustainability-analyzer">
+                        <div class="project-image">
+                            <div class="project-image-placeholder">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Scoped - Sustainability Click POC</h3>
+                            <p class="project-description">Interactive web app that analyzes sustainability metrics for any location you click on a map using real-time environmental, social, and economic data.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">MapLibre GL</span>
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">GIS</span>
+                                <span class="tag">API Integration</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://planwithdata.github.io/Scoped/" target="_blank" class="project-link">Launch App</a>
+                                <a href="javascript:void(0)" onclick="openProjectModal('scoped-sustainability-analyzer')" class="project-link secondary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-card fade-in" data-project="country-analysis">
                         <div class="project-image">
                             <div class="project-image-placeholder">
@@ -1004,7 +1027,7 @@
 
         // Load project preview data
         async function loadProjectPreviews() {
-            const projectIds = ['mining-optimization', 'richmond-demographic', 'sentiment-analysis', 'ev-sales-delhi', 'heat-sensitivity', 'transportation-madina', 'sf-housing', 'country-analysis'];
+            const projectIds = ['mining-optimization', 'richmond-demographic', 'sentiment-analysis', 'ev-sales-delhi', 'heat-sensitivity', 'transportation-madina', 'sf-housing', 'scoped-sustainability-analyzer', 'country-analysis'];
             
             for (const projectId of projectIds) {
                 try {
@@ -1098,6 +1121,14 @@
                     repoIcon: 'fas fa-external-link-alt'
                 },
 
+                'scoped-sustainability-analyzer': {
+                    title: 'Scoped - Sustainability Click POC',
+                    repoUrl: 'https://github.com/planwithdata/Scoped',
+                    repoText: 'View Repository',
+                    repoIcon: 'fab fa-github',
+                    webAppUrl: 'https://planwithdata.github.io/Scoped/',
+                    docsUrl: 'https://github.com/planwithdata/Scoped/blob/main/sustainability-framework.md'
+                },
                 'country-analysis': {
                     title: 'International Development - A comparison of 5 countries\' historical growth',
                     repoUrl: 'Project_GIS_CountryAnalysis.pdf',
@@ -1160,6 +1191,16 @@
                 const repoIcon = config.repoIcon || 'fab fa-github';
                 const repoText = config.repoText || 'View Repository';
                 
+                let buttonsHtml = `<a href="${config.repoUrl}" class="repo-button" target="_blank"><i class="${repoIcon}"></i> ${repoText}</a>`;
+                
+                if (config.webAppUrl) {
+                    buttonsHtml = `<a href="${config.webAppUrl}" class="repo-button" target="_blank" style="margin-right: 0.5rem;"><i class="fas fa-external-link-alt"></i> Launch App</a>` + buttonsHtml;
+                }
+                
+                if (config.docsUrl) {
+                    buttonsHtml += ` <a href="${config.docsUrl}" class="repo-button" target="_blank" style="margin-left: 0.5rem;"><i class="fas fa-book"></i> Documentation</a>`;
+                }
+                
                 const content = `
                     <div style="white-space: pre-line;">${textContent}</div>
                     
@@ -1168,9 +1209,7 @@
                         ${imagesHtml}
                     </div>
                     
-                    <a href="${config.repoUrl}" class="repo-button" target="_blank">
-                        <i class="${repoIcon}"></i> ${repoText}
-                    </a>
+                    <div style="margin-top: 1rem;">${buttonsHtml}</div>
                 `;
                 
                 return { title: config.title, content };
