@@ -1,0 +1,19 @@
+The Coordinate Convertor — Offline Geodetic Coordinate Conversion
+
+Project Overview:
+A local-only desktop/web application for geodetic coordinate conversion using full WGS84 Transverse Mercator mathematics. Designed to match the numerical accuracy of professional Excel-based coordinate tools, with batch file processing via CSV and Excel upload.
+
+Key Features:
+- Full offline operation — no internet connection required
+- Converts between: UTM, Decimal Degrees, DD.MM.SS, DD.MM.SS.SS
+- All pairwise format conversions supported
+- Batch processing: upload CSV/Excel, download with converted columns added
+- No black-box CRS libraries — core math implemented explicitly to J6 series
+- Matches Excel geodetic calculation methodology exactly
+
+Technologies Used:
+- Python (core conversion engine)
+- Streamlit (web UI)
+- pandas + openpyxl (file I/O)
+- Custom WGS84 Transverse Mercator math (forward + inverse projections)
+- UTM zone handling with False Easting/Northing

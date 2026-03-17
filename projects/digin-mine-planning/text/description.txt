@@ -1,0 +1,21 @@
+DIGIN — Mine Planning GIS Platform
+
+Project Overview:
+A comprehensive web-based GIS platform for mining operations. Combines automated grade classification by mineral chemistry, real-time orthomosaic tile streaming, 3D block model slice plan navigation, and multi-stage mining progress tracking — all in a single Leaflet.js interface.
+
+Key Features:
+- Automated grade classification: High, Medium, Low, SubGrade, Waste by MgO/SO3/LSF thresholds
+- Orthomosaic streaming: 2GB+ aerial imagery via Cloud Optimized GeoTIFF tile server
+- Block model support: 900k+ row CSV files, per-elevation lazy-loaded GeoJSON slices
+- Canvas renderer: smooth display of 11,000+ mine blocks without browser slowdown
+- Mining progress tracking: Planned → In Progress → Blasted workflow
+- Multi-format support: Shapefile, KML, Survey CSV, GeoJSON, GeoTIFF
+- Vectorized coordinate transformation: 100x faster than row-by-row processing
+
+Technologies Used:
+- Python / Flask (backend)
+- Leaflet.js + Turf.js (interactive mapping)
+- TiTiler + FastAPI (tile server for orthomosaics)
+- GeoPandas / Shapely / GDAL (geospatial processing)
+- Pandas (vectorized data processing)
+- EPSG:32644 → EPSG:4326 coordinate transformation

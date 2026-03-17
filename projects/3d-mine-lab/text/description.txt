@@ -1,0 +1,20 @@
+3D Mine Lab — Interactive 3D Mining Command Center
+
+Project Overview:
+A high-performance 3D visualization platform for mining operations built with Next.js and React Three Fiber. Renders DEM-based terrain meshes, drapes orthomosaic imagery over the terrain, and overlays interactive slice plan grids — all in the browser.
+
+Key Features:
+- DEM-based 3D terrain mesh rendering with GPU optimization
+- Orthomosaic texture mapping aligned to UTM geobounds
+- Slice plan grid overlay with mining analytics
+- Block model visualization using GPU instancing
+- Forecasting: apply virtual cut operations to the DEM
+- Exploratory cut analysis with clip plane rendering
+- Admin upload panel for DEM, orthomosaic, and slice plan data
+
+Technologies Used:
+- Next.js 13+ (React framework)
+- React Three Fiber + Three.js (3D rendering)
+- Tailwind CSS (styling)
+- GeoTIFF, Shapefile, CSV (spatial data formats)
+- UTM / WGS84 coordinate systems

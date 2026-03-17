@@ -1,0 +1,20 @@
+Elevation Profile Analyzer — Terrain Cross-Section Tool
+
+Project Overview:
+A web-based GIS application for generating interactive terrain elevation profiles from DSM and DTM GeoTIFF rasters. Draw a line across the map and instantly visualize how elevation changes along that transect — comparing surface elevation (DSM) against bare-earth terrain (DTM).
+
+Key Features:
+- Draw any profile line across the map and generate elevation chart instantly
+- Dual elevation display: DSM (surface) and DTM (bare earth) simultaneously
+- Interactive crosshair: hover chart to highlight position on map
+- Automatic zoom to the data's geographic extent
+- Handles large GeoTIFF files (hundreds of megabytes)
+- Fully local processing — no survey data leaves your server
+
+Technologies Used:
+- Python (ASGI backend server)
+- Leaflet.js (interactive mapping)
+- Chart.js (elevation profile chart)
+- rasterio / GDAL (GeoTIFF processing)
+- pyproj (UTM Zone 42N–46N coordinate handling)
+- Vanilla JavaScript + HTML/CSS

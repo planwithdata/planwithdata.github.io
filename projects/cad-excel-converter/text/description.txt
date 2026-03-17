@@ -1,0 +1,19 @@
+CAD ↔ Excel Converter (DMS) — Bidirectional Coordinate File Conversion
+
+Project Overview:
+A standalone web application for converting between Excel/CSV coordinate files and CAD DXF files. Supports both DMS (Degrees-Minutes-Seconds) geographic coordinates and numeric UTM/projected coordinates, with automatic format detection and layer-based output organization.
+
+Key Features:
+- Excel/CSV to DXF: convert point, polyline, and polygon geometries
+- DXF to Excel: extract all entities organized by layer with separate sheets
+- Auto-detect DMS vs. numeric UTM coordinate format
+- Computed polygon area (m²) and line length (m) in output
+- Supports POINT, LWPOLYLINE, and POLYLINE CAD entities
+- Clean layer naming: POINT_LAYER, LINE_LAYER, POLYGON_LAYER
+
+Technologies Used:
+- Python / Flask (backend)
+- ezdxf (CAD file reading and writing)
+- openpyxl + pandas (Excel/CSV processing)
+- Custom DMS ↔ decimal degree conversion math
+- HTML / CSS / JavaScript (frontend)
